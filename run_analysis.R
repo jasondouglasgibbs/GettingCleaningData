@@ -61,5 +61,4 @@ ColumnNames<-names(RecodedData)
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
   #Uses summarize function to provide the mean by subject and activity, then writes a .csv with that information.
 AverageData<-RecodedData %>% group_by(subject, activity)  %>% summarize_all(mean)
-write.csv(AverageData,"AverageDataSet.csv")
-
+write.table(AverageData,"AverageDataSet.txt", row.name=FALSE)
